@@ -23,6 +23,7 @@ class NutritionFacts extends HTMLElement {
     this.shadowRoot.querySelector(".vit-c").innerText = `${this.getAttribute("vit-c-perc")}%`;
     this.shadowRoot.querySelector(".calcium").innerText = `${this.getAttribute("calcium-perc")}%`;
     this.shadowRoot.querySelector(".iron").innerText = `${this.getAttribute("iron-perc")}%`;
+    this.shadowRoot.querySelector(".serving").innerText = `Serving Size ${this.getAttribute("serving")}`;
       
     this.shadowRoot.querySelector(".calories.fat").innerText =`From fat: ${this.getAttribute("fat") * 9}`;
     this.shadowRoot.querySelector(".carbohydrates.percentage").innerText = `${ Math.round(( this.getAttribute("carbohydrates") / 275 ) * 100) }%`;
