@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <span>
+      Calories are manually computed from the macronutrients, so there is no
+      need for that html property.The html properties of this component are:
+    </span>
+    <ul>
+      <li>serving</li>
+      <li>carbohydrates</li>
+      <li>fat</li>
+      <li>protein</li>
+      <li>vit-a-perc (vitamin a percentage)</li>
+      <li>vit-c-perc (vitamin c percentage)</li>
+      <li>calcium-perc (calcium percentage)</li>
+      <li>iron-perc (iron percentage)</li>
+    </ul>
+    The customizable css components of this component are:
+    <ul>
+      <li>Text color (color css property)</li>
+      <li>Background color (background-color css property)</li>
+    </ul>
+    <nutrition-facts
+      serving="2 cups"
+      carbohydrates="500"
+      fat="50"
+      protein="30"
+      vit-a-perc="10"
+      vit-c-perc="20"
+      calcium-perc="14"
+      iron-perc="2"
+      style="--color: black; --bg-color: white"
+    ></nutrition-facts>
+    <script type="module" src="nutritionFacts.js"></script>
+  </body>
+</html>
