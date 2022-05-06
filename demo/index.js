@@ -4,6 +4,7 @@ const protein_input = document.querySelector('input[name="protein"]');
 const inputs = [fat_input, carbs_input, protein_input];
 const color_input = document.querySelector('input[name="color"]');
 const bgcolor_input = document.querySelector('input[name="bg-color"]');
+const serving = document.querySelector('input[name="serving"]');
 console.log(inputs);
 
 const updateCalories = () => {
@@ -40,5 +41,9 @@ color_input.addEventListener('input', () => {
 
 bgcolor_input.addEventListener('input', () => {
     document.querySelector('#demo-1-article').style.backgroundColor = bgcolor_input.value;
+});
+
+serving.addEventListener('input', () => {
+    document.querySelector('.serving').innerHTML = `Serving Size ${serving.value}`;
 });
 
