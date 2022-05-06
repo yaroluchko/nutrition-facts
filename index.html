@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      :root {
+        --color: white;
+        --bg-color: red;
+      }
+      article {
+        display: block;
+        border: 1px solid black;
+        padding: 10px;
+        width: 250px;
+        height: 300px;
+        box-sizing: border-box;
+        background-color: var(--bg-color);
+        color: var(--color);
+      }
+      .title {
+        font-weight: bold;
+        font-size: 1.2em;
+      }
+      .serving {
+        font-weight: bold;
+        font-size: 1em;
+      }
+
+      table {
+        width: 100%;
+        border-top: 2px solid var(--color);
+      }
+
+      table:nth-child(even) {
+        border-bottom: 2px solid var(--color);
+        margin-bottom: 18px;
+      }
+
+      th {
+        text-align: left;
+      }
+
+      tr {
+        margin-top: 3px;
+      }
+
+      tr > td {
+        text-align: left;
+      }
+      tr > td:last-child {
+        text-align: right;
+      }
+      .grams {
+        font-size: 0.8em;
+      }
+    </style>
+    <section>
+      <span
+        >Settings for Demo 1 (this component will not have events, but this is
+        one way to see how the css properties and html attributes will change
+        the appearance of the component):</span
+      >
+      <p>
+        <label for="carbohydrates">Fat:</label>
+        <input type="number" name="fat" />
+      </p>
+      <p>
+        <label for="carbohydrates">Carbohydrates:</label>
+        <input type="number" name="carbohydrates" />
+      </p>
+      <p>
+        <label for="carbohydrates">Protein:</label>
+        <input type="number" name="protein" />
+      </p>
+      <p>
+        <label for="color">Text color: </label>
+        <input type="color" name="color" />
+      </p>
+      <p>
+        <label for="bg-color">Background color: </label>
+        <input type="color" name="bg-color" />
+      </p>
+    </section>
+    <h2>Demo 1 (Change via settings above)</h2>
+    <article id="demo-1-article">
+      <header>
+        <section class="title">Nutrition Facts</section>
+        <section class="serving">Serving Size 1 scoop</section>
+      </header>
+      <section class="grams">
+        <table class="demo-1-table">
+          <th>Amount Per Serving</th>
+          <tr>
+            <td><b>Calories</b> <span class="calories">1200</span></td>
+            <td class="calories fat">From fat: 900</td>
+          </tr>
+          <tr>
+            <td><b>Fat</b> <span class="fat">100g</span></td>
+            <td class="fat percentage">150%</td>
+          </tr>
+          <tr>
+            <td><b>Carbohydrates</b> <span class="carbohydrates">30g</span></td>
+            <td class="carbohydrates percentage">11%</td>
+          </tr>
+          <tr>
+            <td><b>Protein</b> <span class="protein">45g</span></td>
+            <td class="protein percentage">90%</td>
+          </tr>
+        </table>
+        <table class="demo-1-table 2nd-table">
+          <tbody>
+            <tr>
+              <td>Vitamin A 10%</td>
+              <td>Vitamin C 0%</td>
+            </tr>
+            <tr class="thin-end">
+              <td>Calcium 10%</td>
+              <td>Iron 6%</td>
+            </tr>
+          </tbody>
+        </table>
+        <span
+          >The % Daily Value (DV) tells you how much a nutrient in a serving of
+          food contributes to a daily diet. 2,000 calories a day is used for
+          general nutrition advice.</span
+        >
+      </section>
+    </article>
+    <h2>Demo 1 HTML:</h2>
+    <pre>
+        <code>
+      &lt;section&gt;
+      &lt;p&gt;
+        &lt;label for="carbohydrates"&gt;Fat:&lt;/label&gt;
+        &lt;input type="number" name="fat" /&gt;
+      &lt;/p&gt;
+      &lt;p&gt;
+        &lt;label for="carbohydrates"&gt;Carbohydrates:&lt;/label&gt;
+        &lt;input type="number" name="carbohydrates" /&gt;
+      &lt;/p&gt;
+      &lt;p&gt;
+        &lt;label for="carbohydrates"&gt;Protein:&lt;/label&gt;
+        &lt;input type="number" name="protein" /&gt;
+      &lt;/p&gt;
+      &lt;p&gt;
+        &lt;label for="color"&gt;Text color: &lt;/label&gt;
+        &lt;input type="color" name="color" /&gt;
+      &lt;/p&gt;
+      &lt;p&gt;
+        &lt;label for="bg-color"&gt;Background color: &lt;/label&gt;
+        &lt;input type="color" name="bg-color" /&gt;
+      &lt;/p&gt;
+    &lt;/section&gt;
+    &lt;h2&gt;Demo 1 (Change via settings above)&lt;/h2&gt;
+    &lt;article id="demo-1-article"&gt;
+      &lt;header&gt;
+        &lt;section class="title"&gt;Nutrition Facts&lt;/section&gt;
+        &lt;section class="serving"&gt;Serving Size 1 scoop&lt;/section&gt;
+      &lt;/header&gt;
+      &lt;section class="grams"&gt;
+        &lt;table class="demo-1-table"&gt;
+          &lt;th&gt;Amount Per Serving&lt;/th&gt;
+          &lt;tr&gt;
+            &lt;td&gt;&lt;b&gt;Calories&lt;/b&gt; &lt;span class="calories"&gt;1200&lt;/span&gt;&lt;/td&gt;
+            &lt;td class="calories fat"&gt;From fat: 900&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt;&lt;b&gt;Fat&lt;/b&gt; &lt;span class="fat"&gt;100g&lt;/span&gt;&lt;/td&gt;
+            &lt;td class="fat percentage"&gt;150%&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt;&lt;b&gt;Carbohydrates&lt;/b&gt; &lt;span class="carbohydrates"&gt;30g&lt;/span&gt;&lt;/td&gt;
+            &lt;td class="carbohydrates percentage"&gt;11%&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt;&lt;b&gt;Protein&lt;/b&gt; &lt;span class="protein"&gt;45g&lt;/span&gt;&lt;/td&gt;
+            &lt;td class="protein percentage"&gt;90%&lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/table&gt;
+        &lt;table class="demo-1-table 2nd-table"&gt;
+          &lt;tbody&gt;
+            &lt;tr&gt;
+              &lt;td&gt;Vitamin A 10%&lt;/td&gt;
+              &lt;td&gt;Vitamin C 0%&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr class="thin-end"&gt;
+              &lt;td&gt;Calcium 10%&lt;/td&gt;
+              &lt;td&gt;Iron 6%&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/tbody&gt;
+        &lt;/table&gt;
+        &lt;span
+          &gt;The % Daily Value (DV) tells you how much a nutrient in a serving of
+          food contributes to a daily diet. 2,000 calories a day is used for
+          general nutrition advice.&lt;/span
+        &gt;
+      &lt;/section&gt;
+    &lt;/article&gt;
+        </code>
+    </pre>
+    <h2>The common CSS:</h2>
+    <pre>
+        <code>
+            :root {
+                --color: white;
+                --bg-color: red;
+              }
+              article {
+                display: block;
+                border: 1px solid black;
+                padding: 10px;
+                width: 250px;
+                height: 300px;
+                box-sizing: border-box;
+                background-color: var(--bg-color);
+                color: var(--color);
+              }
+              .title {
+                font-weight: bold;
+                font-size: 1.2em;
+              }
+              .serving {
+                font-weight: bold;
+                font-size: 1em;
+              }
+        
+              table {
+                width: 100%;
+                border-top: 2px solid var(--color);
+              }
+        
+              table:nth-child(even) {
+                border-bottom: 2px solid var(--color);
+                margin-bottom: 18px;
+              }
+        
+              th {
+                text-align: left;
+              }
+        
+              tr {
+                margin-top: 3px;
+              }
+        
+              tr > td {
+                text-align: left;
+              }
+              tr > td:last-child {
+                text-align: right;
+              }
+              .grams {
+                font-size: 0.8em;
+              }
+        </code>
+    </pre>
+    <h2>Demo 1 JS</h2>
+    <code>
+        const fat_input = document.querySelector('input[name="fat"]');
+const carbs_input = document.querySelector('input[name="carbohydrates"]');
+const protein_input = document.querySelector('input[name="protein"]');
+const inputs = [fat_input, carbs_input, protein_input];
+const color_input = document.querySelector('input[name="color"]');
+const bgcolor_input = document.querySelector('input[name="bg-color"]');
+console.log(inputs);
+
+const updateCalories = () => {
+    const fat = fat_input.value;
+    const carbs = carbs_input.value;
+    const protein = protein_input.value;
+    const calories = fat * 9 + carbs * 4 + protein * 4;
+    document.querySelector('.calories').innerHTML = calories;
+    document.querySelector('.calories.fat').innerHTML = `From fat: ${fat * 9}`;
+}
+
+const percentage_map  = {"fat": 65, "carbohydrates": 275, "protein": 50};
+
+
+inputs.forEach(input => {
+    input.addEventListener('input', () => {
+        const value = input.value;
+        const value_int = parseInt(value);
+        document.querySelector(`.${input.name}:not(.calories)`).innerHTML = `${value_int}g`;
+        document.querySelector(`.${input.name}.percentage`).innerHTML = Math.round(value_int / percentage_map[input.name] * 100) + "%";
+        updateCalories();
+    });
+})
+
+color_input.addEventListener('input', () => {
+    document.querySelector('#demo-1-article').style.color = color_input.value;
+    document.querySelectorAll('.demo-1-table').forEach(table => {
+        if(Array.from(table.classList).includes("2nd-table")){
+            table.style.borderBottom = `2px solid ${color_input.value}`;
+        }
+        table.style.borderTop = `2px solid ${color_input.value}`;
+    })
+});
+
+bgcolor_input.addEventListener('input', () => {
+    document.querySelector('#demo-1-article').style.backgroundColor = bgcolor_input.value;
+});
+
+
+    </code>
+    <h2>Differences</h2>
+    The rest of the demos have minute differences in the html, where the styles are hardcoded to show how customizable the nutrition facts will be.
+    <h2>Demo 2</h2>
+    <article style="background-color: blue; color: white">
+      <header>
+        <section class="title">Nutrition Facts</section>
+        <section class="serving">Serving Size 60g</section>
+      </header>
+      <section class="grams">
+        <table>
+          <th>Amount Per Serving</th>
+          <tr>
+            <td><b>Calories</b> <span class="calories">292</span></td>
+            <td class="calories fat">From fat: 108</td>
+          </tr>
+          <tr>
+            <td><b>Fat</b> <span class="fat">12g</span></td>
+            <td class="fat percentage">18%</td>
+          </tr>
+          <tr>
+            <td><b>Carbohydrates</b> <span class="carbohydrates">36g</span></td>
+            <td class="carbohydrates percentage">13%</td>
+          </tr>
+          <tr>
+            <td><b>Protein</b> <span class="protein">10g</span></td>
+            <td class="protein percentage">20%</td>
+          </tr>
+        </table>
+        <table>
+          <tbody>
+            <tr>
+              <td>Vitamin A 5%</td>
+              <td>Vitamin C 6%</td>
+            </tr>
+            <tr class="thin-end">
+              <td>Calcium 21%</td>
+              <td>Iron 7%</td>
+            </tr>
+          </tbody>
+        </table>
+        <span
+          >The % Daily Value (DV) tells you how much a nutrient in a serving of
+          food contributes to a daily diet. 2,000 calories a day is used for
+          general nutrition advice.</span
+        >
+      </section>
+    </article>
+    <h2>Demo 3</h2>
+    <article style="background-color: white; color: black">
+      <header>
+        <section class="title">Nutrition Facts</section>
+        <section class="serving">Serving Size 40g</section>
+      </header>
+      <section class="grams">
+        <table style="border-top: 2px solid black">
+          <th>Amount Per Serving</th>
+          <tr>
+            <td><b>Calories</b> <span class="calories">260</span></td>
+            <td class="calories fat">From fat: 180</td>
+          </tr>
+          <tr>
+            <td><b>Fat</b> <span class="fat">20g</span></td>
+            <td class="fat percentage">31%</td>
+          </tr>
+          <tr>
+            <td><b>Carbohydrates</b> <span class="carbohydrates">10g</span></td>
+            <td class="carbohydrates percentage">4%</td>
+          </tr>
+          <tr>
+            <td><b>Protein</b> <span class="protein">10g</span></td>
+            <td class="protein percentage">20%</td>
+          </tr>
+        </table>
+        <table style="border-top: 2px solid black">
+          <tbody>
+            <tr>
+              <td>Vitamin A 10%</td>
+              <td>Vitamin C 0%</td>
+            </tr>
+            <tr class="thin-end">
+              <td>Calcium 10%</td>
+              <td>Iron 6%</td>
+            </tr>
+          </tbody>
+        </table>
+        <span
+          >The % Daily Value (DV) tells you how much a nutrient in a serving of
+          food contributes to a daily diet. 2,000 calories a day is used for
+          general nutrition advice.</span
+        >
+      </section>
+    </article>
+    <h2>Demo 4</h2>
+    <article style="background-color: yellow; color: black">
+      <header>
+        <section class="title">Nutrition Facts</section>
+        <section class="serving">Serving Size 30g</section>
+      </header>
+      <section class="grams">
+        <table style="border-top: 2px solid black">
+          <th>Amount Per Serving</th>
+          <tr>
+            <td><b>Calories</b> <span class="calories"> </span></td>
+            <td class="calories fat"></td>
+          </tr>
+          <tr>
+            <td><b>Fat</b> <span class="fat">29g</span></td>
+            <td class="fat percentage">45%</td>
+          </tr>
+          <tr>
+            <td><b>Carbohydrates</b> <span class="carbohydrates">1g</span></td>
+            <td class="carbohydrates percentage">0%</td>
+          </tr>
+          <tr>
+            <td><b>Protein</b> <span class="protein">0g</span></td>
+            <td class="protein percentage">0%</td>
+          </tr>
+        </table>
+        <table
+          style="border-top: 2px solid black; border-bottom: 2px solid black"
+        >
+          <tbody>
+            <tr>
+              <td>Vitamin A 10%</td>
+              <td>Vitamin C 0%</td>
+            </tr>
+            <tr class="thin-end">
+              <td>Calcium 10%</td>
+              <td>Iron 6%</td>
+            </tr>
+          </tbody>
+        </table>
+        <span
+          >The % Daily Value (DV) tells you how much a nutrient in a serving of
+          food contributes to a daily diet. 2,000 calories a day is used for
+          general nutrition advice.</span
+        >
+      </section>
+    </article>
+    <h2>Demo 5</h2>
+    <article style="background-color: rgb(216, 0, 216)">
+      <header>
+        <section class="title">Nutrition Facts</section>
+        <section class="serving">Serving Size 1 scoop</section>
+      </header>
+      <section class="grams">
+        <table>
+          <th>Amount Per Serving</th>
+          <tr>
+            <td><b>Calories</b> <span class="calories"> </span></td>
+            <td class="calories fat"></td>
+          </tr>
+          <tr>
+            <td><b>Fat</b> <span class="fat"> </span></td>
+            <td class="fat percentage"></td>
+          </tr>
+          <tr>
+            <td><b>Carbohydrates</b> <span class="carbohydrates"> </span></td>
+            <td class="carbohydrates percentage"></td>
+          </tr>
+          <tr>
+            <td><b>Protein</b> <span class="protein"> </span></td>
+            <td class="protein percentage"></td>
+          </tr>
+        </table>
+        <table>
+          <tbody>
+            <tr>
+              <td>Vitamin A 10%</td>
+              <td>Vitamin C 0%</td>
+            </tr>
+            <tr class="thin-end">
+              <td>Calcium 10%</td>
+              <td>Iron 6%</td>
+            </tr>
+          </tbody>
+        </table>
+        <span
+          >The % Daily Value (DV) tells you how much a nutrient in a serving of
+          food contributes to a daily diet. 2,000 calories a day is used for
+          general nutrition advice.</span
+        >
+      </section>
+    </article>
+    <script src="index.js"></script>
+  </body>
+</html>
