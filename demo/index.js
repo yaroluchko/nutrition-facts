@@ -1,3 +1,4 @@
+const demo = document.querySelector('#demo-1');
 const fat_input = document.querySelector('input[name="fat"]');
 const carbs_input = document.querySelector('input[name="carbohydrates"]');
 const protein_input = document.querySelector('input[name="protein"]');
@@ -12,8 +13,6 @@ const updateCalories = () => {
     const carbs = carbs_input.value;
     const protein = protein_input.value;
     const calories = fat * 9 + carbs * 4 + protein * 4;
-    document.querySelector('.calories').innerHTML = calories;
-    document.querySelector('.calories.fat').innerHTML = `From fat: ${fat * 9}`;
 }
 
 const percentage_map  = {"fat": 65, "carbohydrates": 275, "protein": 50};
@@ -23,27 +22,20 @@ inputs.forEach(input => {
     input.addEventListener('input', () => {
         const value = input.value;
         const value_int = parseInt(value);
-        document.querySelector(`.${input.name}:not(.calories)`).innerHTML = `${value_int}g`;
-        document.querySelector(`.${input.name}.percentage`).innerHTML = Math.round(value_int / percentage_map[input.name] * 100) + "%";
+        demo.setAttribute(input.name, value_int);
         updateCalories();
     });
 })
 
 color_input.addEventListener('input', () => {
-    document.querySelector('#demo-1-article').style.color = color_input.value;
-    document.querySelectorAll('.demo-1-table').forEach(table => {
-        if(Array.from(table.classList).includes("2nd-table")){
-            table.style.borderBottom = `2px solid ${color_input.value}`;
-        }
-        table.style.borderTop = `2px solid ${color_input.value}`;
-    })
+    demo.style.setProperty("--color", color_input.value);
 });
 
 bgcolor_input.addEventListener('input', () => {
-    document.querySelector('#demo-1-article').style.backgroundColor = bgcolor_input.value;
+    demo.style.setProperty("--bg-color",bgcolor_input.value);
 });
 
 serving.addEventListener('input', () => {
-    document.querySelector('.serving').innerHTML = `Serving Size ${serving.value}`;
+   demo.setAttribute('serving', serving.value);
 });
 
